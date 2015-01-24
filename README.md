@@ -13,7 +13,7 @@ v = Framer.Importer.load "imported/sketchFile"
 ```
 
 After that I paste in this code.
-### Must haves
+### Must-Have
 ```coffeescript
 for layerGroupName of v
   window[layerGroupName] = v[layerGroupName]
@@ -33,10 +33,10 @@ for layerGroupName of v
 #     y: layerName.originalFrame.y
 ```
 
-## Useful Variables
+## Useful variables
 Having the size of your screensize stored in variables is a huge timesaver.
 
-### Screen size
+### Screensize
 ```coffeescript
 screenWidth = Framer.Device.screen.width
 screenHeight = Framer.Device.screen.height
@@ -52,8 +52,8 @@ I normally define an spring animation early on to use it on multiple layer easil
 spring = "spring(400,35,0)"
 
 # Usage:
-#layer.animate
-#      properties:
-#        y: 300
-#      curve: spring
+# layer.animate
+#   properties:
+#     y: 300
+#   curve: spring
 ```
