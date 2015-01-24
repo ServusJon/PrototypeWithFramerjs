@@ -8,9 +8,6 @@ First, I delete all the example code.
 Then I import my Sketch or Photoshop file. Accessing a layer (folder in Sketch / Photoshop) would be a pain now. That's why I rename "sketchFileLayers" into "v".
 
 ```coffeescript
-# Default Import Sketch File
-sketchFileLayers = Framer.Importer.load "imported/sketchFile"
-
 # Renamed Default Import Sketch File
 v = Framer.Importer.load "imported/sketchFile"
 ```
@@ -26,10 +23,33 @@ for layerGroupName of v
   window[layerGroupName] = v[layerGroupName]
 
 
-
 # Store position of layers for later usage
 # You can animate a layer to a certain Y-position. After this just write: layerName.originalFrame.x
 
 for layerGroupName of v
   v[layerGroupName].originalFrame = window[layerGroupName].frame
+```
+
+### Useful Variables
+Having the size of your screensize stored in variables is a huge timesaver.
+
+#### Screen size
+```coffeescript
+screenWidth = Framer.Device.screen.width
+screenHeight = Framer.Device.screen.height
+
+# Usage:
+# layerName.width = screenWidth 
+# layerName.y = screenheight - 100
+```
+
+#### Animation
+I normally define an spring animation early on to use it on multiple layer easily.
+```coffeescript
+spring = "spring(400,35,0)"
+
+layer.animate
+      properties:
+        y: 300
+      curve: spring
 ```
