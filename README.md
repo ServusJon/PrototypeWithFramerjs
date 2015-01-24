@@ -33,10 +33,10 @@ for layerGroupName of v
 #     y: layerName.originalFrame.y
 ```
 
-### Useful Variables
+## Useful Variables
 Having the size of your screensize stored in variables is a huge timesaver.
 
-#### Screen size
+### Screen size
 ```coffeescript
 screenWidth = Framer.Device.screen.width
 screenHeight = Framer.Device.screen.height
@@ -46,7 +46,7 @@ screenHeight = Framer.Device.screen.height
 # layerName.y = screenheight - 100
 ```
 
-#### Animation
+### Animation
 I normally define an spring animation early on to use it on multiple layer easily.
 ```coffeescript
 spring = "spring(400,35,0)"
