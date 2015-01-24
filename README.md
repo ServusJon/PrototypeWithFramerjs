@@ -13,21 +13,24 @@ v = Framer.Importer.load "imported/sketchFile"
 ```
 
 After that I paste in this code.
-
+### Must haves
 ```coffeescript
-# Make layers easy accessible 
-# Instead of: jakeluLayers.Conversation.opacity = 0
-# Right this: Conversation.opacity = 0
-
 for layerGroupName of v
   window[layerGroupName] = v[layerGroupName]
+# Makes layers easy accessible 
+# Instead of: jakeluLayers.Conversation.opacity = 0
+# Write this: Conversation.opacity = 0
 
-
-# Store position of layers for later usage
-# You can animate a layer to a certain Y-position. After this just write: layerName.originalFrame.x
 
 for layerGroupName of v
   v[layerGroupName].originalFrame = window[layerGroupName].frame
+# Storing position of layers for later usage
+# Usage:
+# layerName.y = 90
+#
+# layerName.animate
+#   properties:
+#     y: layerName.originalFrame.y
 ```
 
 ### Useful Variables
@@ -48,8 +51,9 @@ I normally define an spring animation early on to use it on multiple layer easil
 ```coffeescript
 spring = "spring(400,35,0)"
 
-layer.animate
-      properties:
-        y: 300
-      curve: spring
+# Usage:
+#layer.animate
+#      properties:
+#        y: 300
+#      curve: spring
 ```
