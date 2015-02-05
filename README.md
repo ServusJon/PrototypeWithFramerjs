@@ -1,8 +1,8 @@
-# Prototype With Framerjs
+# Prototype With Framer.js
 Kickstart your prototyping process with Framer.js
 
 ## Basics aka "Nobrainer"
-In every prototype I build with Framer.js in Framer Studio (Get it now: http://framerjs.com/) I tend to use the same code to write more efficient code. 
+In every prototype I build with Framer.js in Framer Studio (Get it now: http://studio.update.framerjs.com/archive/) I tend to use the same code to write more efficient code. 
 
 First, I delete all the example code.
 Then I import my Sketch or Photoshop file. Accessing a layer (folder in Sketch / Photoshop) would be a pain now. That's why I rename "sketchFileLayers" into "v".
